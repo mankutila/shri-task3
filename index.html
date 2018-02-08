@@ -7,22 +7,26 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="game">
-        <div class="game-input">
+    <section class="game-rules">
+        <p>Вводите название города, оканчивающееся на последнюю букву города</p>
+    </section>
+    <section class="game">
+        <div class="game__input">
             <label for="town">Введите название города</label>
             <input type="text" id="town">
-            <button>Send</button>
+            <button id="send">Send</button>
             <button>Speech</button>
+            <button>Сдаюсь!</button>
         </div>
-        <div class="game-result">
+        <div class="game__result">
 
         </div>
 
-    </div>
+    </section>
 
-    <div class="game-map" id="map">
-
-    </div>
+    <section class="game-map">
+        <div id="map"></div>
+    </section>
 
     <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
     <script src="js/index.js"></script>

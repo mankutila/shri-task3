@@ -1,6 +1,6 @@
 .game {
     margin: 50px 0 140px;
 }
-.game-map {
+#map {
     height: 500px;
 }
