@@ -1,6 +1,119 @@
-.game {
-    margin: 50px 0 140px;
+:root {
+    font-size: 16px;
+    --accent-color: #EA535B;
+    --opposite-color: #5aea53;
+}
+* {
+    box-sizing: border-box;
+}
+*:focus {
+    outline-color: #de618f;
+}
+body {
+    background-color: #fff;
+    font: 1rem 'Source Sans Pro', Arial, Ubuntu, sans-serif;
+}
+p {
+    margin: 0;
+    margin-bottom: 1em;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+.half {
+    flex: 0 0 auto;
+    width: 50%;
+    padding: 0 20px;
 }
 #map {
     height: 500px;
+    margin: 20px 0;
+}
+.game-rules {
+    padding: 0 20px;
+}
+.game__result {
+    height: 500px;
+    overflow-y: scroll;
+}
+.game__result p:nth-child(even) {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--accent-color);
+}
+.txt-input {
+    font-size: 1.5rem;
+    padding: 5px 15px;
+    border: 1px solid #cacaca;
+    border-right:none;
+    width: 80%;
+}
+.txt-input--invalid {
+    border-color: #f00;
+}
+.input-wrapper {
+    position: relative;
+    display: flex;
+    margin: 1rem 0 2rem;
+}
+.error {
+    position: absolute;
+    margin: 0;
+    bottom: -20px;
+    font-size: .8rem;
+    color: red;
+}
+#voice, #send, #concede {
+    background: none;
+    border: 1px solid #cacaca;
+}
+#voice {
+    order: -1;
+    border-right:none;
+}
+.voice-icon {
+    width: 25px;
+    height: 25px;
+}
+.voice-icon--active {
+    fill: var(--accent-color);
+}
+#concede {
+    background-color: var(--accent-color);
+    padding: 8px 15px;
+    border-radius: 3px;
+    border: none;
+    color: #fff;
+    font-size: 1rem;
+}
+.draw {
+    font-weight: 700;
+}
+.draw--comp {
+    color: var(--opposite-color);
+}
+.draw--user {
+    color: var(--accent-color)
+}
+.game-finish {
+    display: none;
+    padding: 0 20px;
+}
+.game-finish > h2 {
+    width: 100%;
+}
+.game-finish__user h2 {
+    color: var(--accent-color);
+}
+.game-finish__comp h2 {
+    color: var(--opposite-color);
+}
+/*background-image: linear-gradient(45deg, #ea535b, #f68281, #feada9, #ffd6d3, #ffffff)*/
+
+@media (max-width: 900px) {
+    .xs-full {
+        width: 100%;
+        margin-bottom: 20px;
+    }
 }

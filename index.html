@@ -1,27 +1,51 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Игра в города</title>
     <meta name="description" content="Игра в города для ШРИ 2018">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&amp;subset=cyrillic" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <h1>Игра в города</h1>
     <section class="game-rules">
-        <p>Вводите название города, оканчивающееся на последнюю букву города</p>
+        <p>Вводите название города, оканчивающееся на последнюю букву города, введённого предыдущим игроком. Если вы ходите первым, то выберите первую букву самостоятельно.</p>
+        <p>В этот раз <span id="draw"></span>.</p>
     </section>
-    <section class="game">
-        <div class="game__input">
+    <section class="game row">
+        <div class="game__input half xs-full">
             <label for="town">Введите название города</label>
-            <input type="text" id="town">
-            <button id="send">Send</button>
-            <button>Speech</button>
-            <button>Сдаюсь!</button>
+            <form class="input-wrapper" id="towns-form">
+                <input class="txt-input" type="text" id="town" maxlength="50">
+                <button type="submit" id="send">Отправить</button><button id="voice" aria-label="Голосовой ввод">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="voice-icon">
+                    <path d="M24 30c3.31 0 5.98-2.69 5.98-6L30 12c0-3.32-2.68-6-6-6-3.31 0-6 2.68-6 6v12c0 3.31 2.69 6 6 6zm10.6-6c0 6-5.07 10.2-10.6 10.2-5.52 0-10.6-4.2-10.6-10.2H10c0 6.83 5.44 12.47 12 13.44V44h4v-6.56c6.56-.97 12-6.61 12-13.44h-3.4z"/>
+                    <path fill="none" d="M0 0h48v48H0z"/>
+                </svg>
+            </button>
+                <p id="error" class="error"></p>
+            </form>
+
+
+            <button id="concede">Закончить игру</button>
+
         </div>
-        <div class="game__result">
+        <div class="game__result half xs-full">
 
         </div>
 
+    </section>
+    <section id="finish" class="game-finish row">
+
+        <div class="game-finish__user half xs-full">
+            <h2>Вы назвали:</h2>
+        </div>
+        <div class="game-finish__comp half xs-full">
+            <h2>Компьютер назвал:</h2>
+
+        </div>
     </section>
 
     <section class="game-map">
@@ -29,6 +53,8 @@
     </section>
 
     <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
+    <script src="js/game.js"></script>
+    <script src="js/speech.js"></script>
     <script src="js/index.js"></script>
 </body>
 </html>
